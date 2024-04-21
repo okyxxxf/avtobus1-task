@@ -3,15 +3,15 @@ window.addEventListener("load", () => {
   const groups = localStorage.getItem("groups");
   const contacts = localStorage.getItem("contacts");
 
-  const groupArr = groups.split(",");
-  const contactsArr = JSON.parse(contacts);
-
   if (!groups && !contacts) {
     accordionWrapper.innerText = "Список контактов пуст";
     accordionWrapper.classList.add("accordion-wrapper_empty");
+    return;
   }  
 
   if (groups && contacts) {
+    const groupArr = groups.split(",");
+    const contactsArr = JSON.parse(contacts);
     const accordion = document.createElement("div");
     accordion.className = "accordion accordion-flush";;
 
