@@ -71,6 +71,26 @@ function createGroupItem(title, contacts, index) {
     buttonGroup.className = "d-flex gap-2";
   
     const editButton = document.createElement("button");
+    editButton.onclick = () => {
+      if (editButton.innerHTML.includes('svg')) {
+        contactName.innerHTML = `<input type="text" class="form-control contact__name" value="${contact.name}" />`;
+        contactNumber.innerHTML = `<input type="text" class="form-control contact__number" value="${contact.number}" />`;
+        editButton.innerHTML = 'Save';
+      } else {
+        const newName = accordionBody.querySelector('.contact__name > input').value;
+        const newNumber = accordionBody.querySelector('.contact__number > input').value;
+        console.log(newName, newNumber);
+        const updatedContacts = contacts.map(c => {
+          if (c.name === contact.name && c.number === contact.number) {
+            return { ...contact, name: newName, number: newNumber };
+          }
+          return contact;
+        });
+        console.log(accordionBody)
+        localStorage.setItem('contacts', JSON.stringify(updatedContacts));
+        window.location.reload();
+      }
+    }
     editButton.className = "btn btn-outline-secondary fs-heading edit-btn";
     editButton.innerHTML = `
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,8 +98,13 @@ function createGroupItem(title, contacts, index) {
       </svg>
     `;
     buttonGroup.appendChild(editButton);
+    
   
     const deleteButton = document.createElement("button");
+    deleteButton.onclick = (e) => {
+      e.target.closest(".contact").remove()
+      removeContact(contact);
+    };
     deleteButton.className = "btn btn-outline-secondary fs-heading delete-btn";
     deleteButton.innerHTML = `
       <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,4 +124,14 @@ function createGroupItem(title, contacts, index) {
   accordionItem.appendChild(accordionCollapse);
 
   return accordionItem;
+}
+
+function removeContact(contact) {
+  const contacts = JSON.parse(localStorage.getItem("contacts"));
+  
+  const contactRemoveIndex = contacts.findIndex((c) => c.name === contact.name && c.number === contact.number);
+
+  const newContacts = [...contacts.slice(0, contactRemoveIndex), ...contacts.slice(contactRemoveIndex + 1, contacts.length - 1)];
+
+  localStorage.setItem("contacts", JSON.stringify(newContacts));
 }

@@ -69,13 +69,15 @@
 
 .group-select__wrapper {
   position: relative;
+  width: 214px;
   display: inline-block;
+  margin: 0 auto;
 }
 
 .select-icon {
   position: absolute;
   top: 50%;
-  right: 25px;
+  right: 10px;
   pointer-events: none;
   transform: translateY(-50%);
 }

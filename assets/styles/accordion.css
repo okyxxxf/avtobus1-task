@@ -86,3 +86,6 @@
   border: 1px solid transparent;
 }
 
+input.contact__name {
+  width: 200px;
+}
