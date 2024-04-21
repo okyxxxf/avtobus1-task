@@ -23,10 +23,14 @@
   background: rgba(0, 0, 0, 0.1) !important;
   outline: none !important;
   box-shadow: none !important;
-  width: 264px;
+  width: 214px;
   margin-inline: auto;
   appearance: none;
   color: rgba(0, 0, 0, 0.6) !important;
+}
+
+#groupsModal .modal-input {
+  margin: 0;
 }
 
 .modal-input::placeholder {
@@ -48,16 +52,18 @@
 .modal-group__name {
   padding: 11px 12px;
   width: 214px;
+  display: flex;
+  align-items: center;
   background: rgba(0, 0, 0, 0.1) !important;
   border-radius: 6px;
 }
 
-.btn-add {
+.add-btn {
   color: #005BFE !important;
   text-decoration: none !important;
 }
 
-.btn-add:hover {
+.add-btn:hover {
   background: rgba(0, 91, 254, 0.1) !important;
 }
 

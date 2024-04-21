@@ -25,6 +25,7 @@ function updateGroupsModal(arr, modalBody) {
     groupNameDiv.textContent = item;
 
     const deleteButton = document.createElement('button');
+    deleteButton.onclick = (e) => {e.target.closest(".modal-group").remove()};
     deleteButton.className = 'btn btn-outline-secondary fs-heading delete-btn';
     deleteButton.innerHTML = `
       <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
