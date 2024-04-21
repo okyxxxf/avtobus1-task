@@ -66,6 +66,8 @@
 
 .contact__number {
   font-size: 1.125rem;
+  display: flex;
+  align-items: center;
 }
 
 .edit-btn:hover > svg > path,
