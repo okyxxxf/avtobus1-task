@@ -9,6 +9,9 @@ window.addEventListener("load", () => {
     const contacts = localStorage.getItem("contacts");
     const parsedContacts = JSON.parse(contacts);
 
+    phoneInput.value = "";
+    nameInput.value = "";
+
     if (!phoneInput.value || !nameInput.value || !selectGroup.value) return window.location.reload();
 
     const newContact = {name: nameInput.value, number: phoneInput.value, group: selectGroup.value};

@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
   const groups = localStorage.getItem("groups");
   const contacts = localStorage.getItem("contacts");
 
-  if (!groups && !contacts) {
+  if (!contacts) {
     accordionWrapper.innerText = "Список контактов пуст";
     accordionWrapper.classList.add("accordion-wrapper_empty");
     return;
