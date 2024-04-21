@@ -75,9 +75,11 @@
 
 .edit-btn:hover {
   background: #0d6efd !important;
+  border: 1px solid transparent;
 }
 
 .delete-btn:hover {
   background: #dc3545 !important;
+  border: 1px solid transparent;
 }
 
