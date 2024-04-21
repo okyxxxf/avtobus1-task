@@ -17,9 +17,6 @@ window.addEventListener("load", () => {
     } else {
       localStorage.setItem("contacts", JSON.stringify([newContact]));
     }
-
-    phoneInput.value = "";
-    nameInput.value = "";
     window.location.reload();
   });
 
