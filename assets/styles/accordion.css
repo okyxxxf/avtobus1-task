@@ -22,9 +22,18 @@
 
 .accordion { 
   display: flex;
-  width: 1160px;
+  max-width: 1160px;
+  width: 95%;
+  margin: 0 auto;
   gap: 24px;
   flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    flex-wrap: wrap;
+  }
+  
 }
 
 .accordion-button {
