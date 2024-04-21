@@ -1,0 +1,53 @@
+.modal-dialog {
+  margin: 0;
+  height: 100vh;
+  width: 312px;
+}
+
+.modal.fade .modal-dialog {
+  transition: transform .3s ease-out;
+  transform: translate(0, 0);
+}
+
+.modal-content {
+  height: 100%;
+  border-radius: 0;
+}
+
+.modal-header {
+  height: 70px;
+}
+
+.modal-input {
+  background: rgba(0, 0, 0, 0.1) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.modal-group {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-group__name {
+  padding: 11px 12px;
+  width: 214px;
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-radius: 6px;
+}
+
+.btn-add {
+  color: #005BFE !important;
+  text-decoration: none !important;
+}
+
+.btn-add:hover {
+  background: rgba(0, 91, 254, 0.1) !important;
+}
