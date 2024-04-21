@@ -9,7 +9,6 @@ window.addEventListener("load", () => {
   if (!groups && !contacts) {
     accordionWrapper.innerText = "Список контактов пуст";
     accordionWrapper.classList.add("accordion-wrapper_empty");
-    return;
   }  
 
   if (groups && contacts) {

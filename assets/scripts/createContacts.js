@@ -12,7 +12,11 @@ window.addEventListener("load", () => {
     if (!phoneInput.value || !nameInput.value || !selectGroup.value) return window.location.reload();
 
     const newContact = {name: nameInput.value, number: phoneInput.value, group: selectGroup.value};
-    localStorage.setItem("contacts", JSON.stringify([...parsedContacts, newContact]));
+    if (parsedContacts) {
+      localStorage.setItem("contacts", JSON.stringify([...parsedContacts, newContact]));
+    } else {
+      localStorage.setItem("contacts", JSON.stringify([newContact]));
+    }
 
     window.location.reload();
   });
