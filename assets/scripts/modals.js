@@ -2,14 +2,18 @@ window.addEventListener("load", () => {
   const groupModal = document.querySelector("#groupsModal");
   const groupModalBody = groupModal.querySelector(".modal-body");
 
+  const contactsModal = document.querySelector("#contactsModal");
+  const contactsModalBody = contactsModal.querySelector(".modal-body");
+
   const groups = localStorage.getItem("groups");
   const parsedGroups = groups.split(",");
 
-  updateModal(parsedGroups, groupModalBody);
+  updateGroupsModal(parsedGroups, groupModalBody);
+  updateContactsModal(parsedGroups, contactsModalBody)
 })
 
 
-function updateModal(arr, modalBody) {
+function updateGroupsModal(arr, modalBody) {
   modalBody.innerHTML = '';
 
   arr.forEach(item => {
@@ -35,3 +39,15 @@ function updateModal(arr, modalBody) {
   });
 }
 
+function updateContactsModal(arr, modalBody) {
+  const select = modalBody.querySelector('.group-select');
+
+  arr.forEach((value) => {
+      const option = document.createElement('option');
+      
+      option.value = value;
+      option.text = value;
+      
+      select.appendChild(option);
+  });
+}

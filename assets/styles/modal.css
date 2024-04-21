@@ -16,12 +16,21 @@
 
 .modal-header {
   height: 70px;
+  padding-inline: 24px !important;
 }
 
-.modal-input {
+.modal-input, .group-select {
   background: rgba(0, 0, 0, 0.1) !important;
   outline: none !important;
   box-shadow: none !important;
+  width: 264px;
+  margin-inline: auto;
+  appearance: none;
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.modal-input::placeholder {
+  color: rgba(0, 0, 0, 0.6) !important;
 }
 
 .modal-group {
@@ -50,4 +59,31 @@
 
 .btn-add:hover {
   background: rgba(0, 91, 254, 0.1) !important;
+}
+
+.group-select__wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.select-icon {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.select-icon::before {
+  content: url(../icons/dropdown.svg);
+}
+
+.btn-close {
+  background-size: 14px !important;
+  padding: 5px !important;
+  transition: 0.4s;
+}
+
+.btn-close:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
